@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<!-- CSS -->
+ <style>
+    *{
+        margin: 0px;
+    }
+    body{
+        min-height: 100vh;
+    }
+    /* header */
+    .title_box {
+        background-color: #051F20;
+        padding: 30px;
+    }
+    .title{
+        text-align: center;
+        color: #DAF1DE;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        text-shadow: #DAF1DE 0px 0px 30px;
+    }
+    /* main */
+    .game_space{
+        background-color: #235347;
+        padding: 30px;
+        height: 60vh;
+    }
+    .attention{
+        background-color: #0B2B26;
+        padding: 30px;
+        border-radius: 20px;
+        box-shadow: 0px 0px 20px #0B2B26;
+        transition: padding 0.3s ease;
+        margin-bottom: 150px;
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+    .attention:hover{
+        padding: 45px;
+    }
+    .intro{
+        text-align: center;
+        color: #8EB69B;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        text-shadow: #8EB69B 0px 0px 20px;
+    }
+    .btn{
+        display: flex;
+        position: relative;
+        left: 47%;
+        background-color: #8EB69B;
+        color: #0B2B26;
+        border-radius: 20px;
+        padding: 15px;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-weight: 800;
+        box-shadow: 0px 0px 20px #8EB69B;
+        margin-top: 30px;
+        border: none;
+        text-align: center;
+        transition: padding 0.3s ease;
+    }
+    .btn:hover{
+        padding: 30px;
+    }
+    /* footer */
+    footer{
+        background-color: #051F20;
+        padding: 30px;
+        height: 20vh;
+    }
+    .rights{
+        text-align: center;
+        color: #DAF1DE;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        text-shadow: #DAF1DE 0px 0px 20px;
+    }
+ </style>
+
+
+
+
+
+<!-- HTML -->
+<body>
+    <!-- header -->
+     <header>
+        <div class="title_box">
+            <h1 class="title">PENALTY SHOOTOUT GAME</h1>
+        </div>
+     </header>
+     <!-- main -->
+      <main>
+        <div class="game_space">
+            <div class="attention">
+                <P class="intro">Challenge your luck and see if you can score 5 goals!</P>
+            </div>
+            <button class="btn">SHOOT!</button>
+        </div>
+      </main>
+        <!-- footer -->
+        <footer>
+            <p class="rights">Penalty Shootout Game. All rights reserved.</p>
+        </footer>
+</body>
+</html>
