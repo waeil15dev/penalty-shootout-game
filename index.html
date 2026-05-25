@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <!-- CSS -->
  <style>
     *{
@@ -28,7 +29,7 @@
     .game_space{
         background-color: #235347;
         padding: 30px;
-        height: 60vh;
+        height: 80vh;
     }
     .attention{
         background-color: #0B2B26;
@@ -36,7 +37,7 @@
         border-radius: 20px;
         box-shadow: 0px 0px 20px #0B2B26;
         transition: padding 0.3s ease;
-        margin-bottom: 150px;
+        margin-bottom: 50px;
         margin-left: 20px;
         margin-right: 20px;
     }
@@ -49,10 +50,12 @@
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         text-shadow: #8EB69B 0px 0px 20px;
     }
-    .btn{
+    .btndiv{
         display: flex;
-        position: relative;
-        left: 47%;
+        justify-content: center;
+        align-items: center;
+    }
+    .btn{
         background-color: #8EB69B;
         color: #0B2B26;
         border-radius: 20px;
@@ -68,11 +71,50 @@
     .btn:hover{
         padding: 30px;
     }
+    .score_count{
+        background-color: #051F20;
+        Padding: 3px;
+        border-radius: 20px;
+        box-shadow: 0px 0px 20px #051F20;
+        margin: 30px;
+        transition: padding 0.3s ease, margin-bottom 0.3s ease;
+       }
+    .score_count:hover{
+        padding: 30px;
+        margin-bottom: 30px;
+    }
+    .goalCount{
+        text-align: center;
+        color: #8EB69B;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        text-shadow: #8EB69B 0px 0px 20px;
+        margin: 30px;
+        font-weight: 800;
+    }
+    .results_area{
+        background-color: #8EB69B;
+        padding: 30px;
+        border-radius: 20px;
+        box-shadow: 0px 0px 20px #8EB69B;
+        transition: padding 0.3s ease;
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+    .results_area:hover{
+        padding: 45px;
+    }
+    .result{
+        text-align: center;
+        color: #0B2B26;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        text-shadow: #0B2B26 0px 0px 20px;
+        font-weight: 800;
+    }
     /* footer */
     footer{
         background-color: #051F20;
         padding: 30px;
-        height: 20vh;
+        height: 10vh;
     }
     .rights{
         text-align: center;
@@ -81,10 +123,6 @@
         text-shadow: #DAF1DE 0px 0px 20px;
     }
  </style>
-
-
-
-
 
 <!-- HTML -->
 <body>
@@ -100,7 +138,16 @@
             <div class="attention">
                 <P class="intro">Challenge your luck and see if you can score 5 goals!</P>
             </div>
-            <button class="btn">SHOOT!</button>
+            <div class="btndiv">
+                <button class="btn">SHOOT!</button>
+            </div>
+            <div class="score_count">
+                <!-- <p>Goals: <span id="goalCount">0</span></p> -->
+                 <p class="goalCount">Goals: 0</p>
+            </div>
+            <div class="results_area">
+                <p class="result"></p>
+            </div>
         </div>
       </main>
         <!-- footer -->
@@ -108,4 +155,32 @@
             <p class="rights">Penalty Shootout Game. All rights reserved.</p>
         </footer>
 </body>
+
+<!-- JavaScript -->
+<script>
+    const button = document.querySelector(".btn");
+    const either = document.querySelector(".result");
+    const scoreCount = document.querySelector(".goalCount");
+
+    let GOALS = 0;
+
+    button.addEventListener("click", () => {
+        const Goalresult = Math.random() < 0.5;
+         if(Goalresult) {
+            GOALS++ ;
+            either.textContent="Goal";
+        }
+         else{
+            either.textContent="Miss";
+        }
+        scoreCount.textContent= `Goals:${GOALS}`; 
+
+        if(GOALS>=5) {
+            alert("WOW!you have scored 5 goals");
+            GOALS = 0;
+            scoreCount.textContent= `Goals:${GOALS}`; 
+            either.textContent="";
+        }
+});
+</script>
 </html>
